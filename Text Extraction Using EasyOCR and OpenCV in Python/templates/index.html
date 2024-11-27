@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Extraction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="header">
+        <div id="logo-container">
+            <div id="logo">
+                <img src="{{ url_for('static', filename='l1.png') }}" alt="Your Logo">
+            </div>
+            <div id="website-name">Vision Voice</div> <!-- Your website name beside the logo -->
+        </div>
+        <div id="welcome-container">
+            <p id="welcome-text">Welcome to our website! We specialize in Extracting text from images. Simply upload your image, and we'll do the rest.</p>
+            <span class="hi-emoji">👋</span> <!-- Hi emoji -->
+        </div>
+    </div>
+
+    <div id="container">
+        <div class="heading">
+            <h1>Text Extractor From Images</h1>
+        </div>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="imageInput" id="chooseImageButton" class="button">Choose Image</label>
+            <span id="selectedImageName" class="image-name"></span>
+            <input type="file" id="imageInput" name="image" accept="image/*" style="display: none;">
+            <button type="submit" id="uploadButton" class="button" disabled>Upload</button>
+            <div id="loadingAnimation" class="loading-animation"></div>
+        </form>
+        <div id="textResults"></div>
+        <div id="imageContainer"></div>
+        <button id="downloadButton" class="button" style="display: none;">Download Processed Image</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
